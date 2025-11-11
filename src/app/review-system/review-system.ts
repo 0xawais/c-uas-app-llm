@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 interface ReviewCategory {
   id: string;
@@ -12,7 +13,7 @@ interface ReviewCategory {
 
 @Component({
   selector: 'app-review-system',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './review-system.html',
   styleUrl: './review-system.scss',
 })
