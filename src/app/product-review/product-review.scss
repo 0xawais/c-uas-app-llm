@@ -110,124 +110,61 @@
   font-size: 14px;
 }
 
-.review-form-section, .reviews-section {
+.category-ratings-section {
   background: white;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin-bottom: 30px;
+
+  h2 {
+    margin: 0 0 24px 0;
+    font-size: 24px;
+    color: #1a1a1a;
+  }
 }
 
-h2 {
-  margin: 0 0 20px 0;
-  font-size: 24px;
-  color: #1a1a1a;
+.category-rating-card {
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #374151;
-}
-
-.form-control {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 14px;
-  transition: border-color 0.2s;
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: #2563eb;
-}
-
-.rating-input {
-  display: flex;
-  gap: 5px;
-}
-
-.rating-input .star {
-  font-size: 32px;
-  color: #ddd;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.rating-input .star.filled {
-  color: #fbbf24;
-}
-
-.rating-input .star:hover {
-  color: #fbbf24;
-}
-
-.submit-btn {
-  background: #2563eb;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.submit-btn:hover:not(:disabled) {
-  background: #1d4ed8;
-}
-
-.submit-btn:disabled {
-  background: #9ca3af;
-  cursor: not-allowed;
-}
-
-.review-card {
-  border-bottom: 1px solid #e5e7eb;
-  padding: 20px 0;
-}
-
-.review-card:last-child {
-  border-bottom: none;
-}
-
-.review-header {
+.category-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+
+  h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+
+  .rating-score {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2563eb;
+  }
 }
 
-.review-author {
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 5px;
-}
-
-.review-date {
-  color: #9ca3af;
+.category-description {
+  color: #666;
   font-size: 14px;
-}
-
-.review-title {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 10px 0;
-  color: #1a1a1a;
-}
-
-.review-comment {
-  color: #4b5563;
-  line-height: 1.6;
-  margin: 0;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
 }
 
 @media (max-width: 768px) {

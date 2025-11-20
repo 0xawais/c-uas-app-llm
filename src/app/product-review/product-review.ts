@@ -1,30 +1,28 @@
 // product-review.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService, Product, Review } from '../product.service';
+import { ProductService, Product, CategoryRatings } from '../product.service';
 
 @Component({
   selector: 'app-product-review',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule],
   templateUrl: './product-review.html',
   styleUrls: ['./product-review.scss']
 })
 export class ProductReviewComponent implements OnInit {
   product: Product | undefined;
-  reviews: Review[] = [];
-  Math = Math;
-  
-  newReview = {
-    author: '',
-    rating: 5,
-    title: '',
-    comment: ''
+  categoryRatings: CategoryRatings & { overall: number, count: number } = {
+    transportability: 0,
+    easeOfUse: 0,
+    interoperability: 0,
+    detection: 0,
+    reliability: 0,
+    overall: 0,
+    count: 0
   };
-
-  hoveredRating = 0;
+  Math = Math;
 
   constructor(
     private route: ActivatedRoute,
@@ -42,33 +40,7 @@ export class ProductReviewComponent implements OnInit {
         return;
       }
       
-      this.reviews = this.productService.getReviewsForProduct(productId);
+      this.categoryRatings = this.productService.getAverageCategoryRatings(productId);
     });
-  }
-
-  get averageRating(): number {
-    if (this.reviews.length === 0) return 0;
-    const sum = this.reviews.reduce((acc, review) => acc + review.rating, 0);
-    return Math.round((sum / this.reviews.length) * 10) / 10;
-  }
-
-  handleSubmitReview(): void {
-    if (!this.product) return;
-    
-    const review: Review = {
-      id: this.reviews.length + 1,
-      ...this.newReview,
-      date: new Date().toISOString().split('T')[0]
-    };
-    
-    this.productService.addReview(this.product.id, review);
-    this.reviews = this.productService.getReviewsForProduct(this.product.id);
-    
-    this.newReview = {
-      author: '',
-      rating: 5,
-      title: '',
-      comment: ''
-    };
   }
 }

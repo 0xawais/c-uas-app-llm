@@ -1,3 +1,4 @@
+// nav-system.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -29,10 +30,7 @@ export class NavSystem implements OnInit {
   ngOnInit(): void {
     const allProducts = this.productService.getAllProducts();
     this.products = allProducts.map(product => {
-      const reviews = this.productService.getReviewsForProduct(product.id);
-      const averageRating = reviews.length > 0
-        ? Math.round((reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length) * 10) / 10
-        : 0;
+      const categoryRatings = this.productService.getAverageCategoryRatings(product.id);
       
       return {
         id: product.id,
@@ -41,8 +39,8 @@ export class NavSystem implements OnInit {
         category: product.category,
         image: product.image,
         shortDescription: product.description.substring(0, 150) + '...',
-        averageRating: averageRating,
-        reviewCount: reviews.length
+        averageRating: categoryRatings.overall,
+        reviewCount: categoryRatings.count
       };
     });
   }

@@ -12,13 +12,29 @@ export interface Product {
   specifications: string[];
 }
 
+export interface CategoryRatings {
+  transportability: number;
+  easeOfUse: number;
+  interoperability: number;
+  detection: number;
+  reliability: number;
+}
+
 export interface Review {
   id: number;
   author: string;
-  rating: number;
+  milService: string;
+  role: string;
+  otherUASSystems?: string;
+  categoryRatings: CategoryRatings;
+  additionalComments: {
+    transportability?: string;
+    easeOfUse?: string;
+    interoperability?: string;
+    detection?: string;
+    reliability?: string;
+  };
   date: string;
-  title: string;
-  comment: string;
 }
 
 @Injectable({
@@ -96,70 +112,150 @@ export class ProductService {
       {
         id: 1,
         author: 'Sarah Johnson',
-        rating: 5,
-        date: '2024-10-15',
-        title: 'Excellent quality!',
-        comment: 'This product exceeded my expectations. The build quality is fantastic and it works exactly as described.'
+        milService: 'Army',
+        role: 'Air Defense Artillery Officer',
+        categoryRatings: {
+          transportability: 4,
+          easeOfUse: 5,
+          interoperability: 5,
+          detection: 5,
+          reliability: 5
+        },
+        additionalComments: {
+          easeOfUse: 'Extremely intuitive interface and autonomous operations make deployment straightforward.',
+          reliability: 'Flawless performance in field tests. The reusability feature is a game-changer.'
+        },
+        date: '2024-10-15'
       },
       {
         id: 2,
         author: 'Mike Chen',
-        rating: 4,
-        date: '2024-10-10',
-        title: 'Great value for money',
-        comment: 'Very satisfied with this purchase. Does everything I need it to do. Only minor issue is the setup instructions could be clearer.'
+        milService: 'Air Force',
+        role: 'Weapons System Officer',
+        categoryRatings: {
+          transportability: 4,
+          easeOfUse: 4,
+          interoperability: 5,
+          detection: 5,
+          reliability: 4
+        },
+        additionalComments: {
+          interoperability: 'Integrates seamlessly with existing Lattice AI systems.',
+          transportability: 'Compact design but requires specialized transport due to jet fuel requirements.'
+        },
+        date: '2024-10-10'
       }
     ],
     2: [
       {
         id: 1,
         author: 'John Martinez',
-        rating: 5,
-        date: '2024-11-01',
-        title: 'Best Counter-UAS on the market',
-        comment: 'Deployed this in the field and it performed flawlessly. The PNT spoofing capability is a game changer. Highly recommended.'
+        milService: 'Marines',
+        role: 'Infantry Officer',
+        categoryRatings: {
+          transportability: 5,
+          easeOfUse: 5,
+          interoperability: 4,
+          detection: 5,
+          reliability: 5
+        },
+        additionalComments: {
+          transportability: 'Lightweight and portable - perfect for dismounted operations.',
+          easeOfUse: 'Minimal training required. Soldiers were effective with it immediately.'
+        },
+        date: '2024-11-01'
       },
       {
         id: 2,
         author: 'Emily Rodriguez',
-        rating: 5,
-        date: '2024-10-28',
-        title: 'Intuitive and effective',
-        comment: 'Easy to use even under pressure. The AI identification is incredibly accurate and the range is impressive.'
+        milService: 'Army',
+        role: 'Electronic Warfare Specialist',
+        categoryRatings: {
+          transportability: 5,
+          easeOfUse: 5,
+          interoperability: 5,
+          detection: 5,
+          reliability: 4
+        },
+        additionalComments: {
+          detection: 'Detection range is impressive. AI identification rarely misses.',
+          reliability: 'Battery life could be extended for longer missions.'
+        },
+        date: '2024-10-28'
       },
       {
         id: 3,
         author: 'David Thompson',
-        rating: 4,
-        date: '2024-10-20',
-        title: 'Solid performer',
-        comment: 'Works great for our needs. Battery life could be better but overall a very reliable system.'
+        milService: 'Navy',
+        role: 'Security Officer',
+        categoryRatings: {
+          transportability: 5,
+          easeOfUse: 4,
+          interoperability: 4,
+          detection: 4,
+          reliability: 4
+        },
+        additionalComments: {
+          easeOfUse: 'Interface is intuitive but requires practice with PNT spoofing features.',
+          interoperability: 'Works well with our systems but integration could be smoother.'
+        },
+        date: '2024-10-20'
       }
     ],
     3: [
       {
         id: 1,
         author: 'Robert Williams',
-        rating: 5,
-        date: '2024-11-05',
-        title: 'Unmatched SIGINT capability',
-        comment: 'The three channels make all the difference. Being able to intercept and DF simultaneously is exactly what we needed.'
+        milService: 'Army',
+        role: 'Signal Intelligence Analyst',
+        categoryRatings: {
+          transportability: 4,
+          easeOfUse: 5,
+          interoperability: 5,
+          detection: 5,
+          reliability: 5
+        },
+        additionalComments: {
+          easeOfUse: 'Three channels make operations significantly more effective.',
+          interoperability: 'ATAK integration is seamless and enhances situational awareness.'
+        },
+        date: '2024-11-05'
       },
       {
         id: 2,
         author: 'Lisa Anderson',
-        rating: 5,
-        date: '2024-10-25',
-        title: 'Professional grade equipment',
-        comment: 'ATAK integration works seamlessly. The rugged build has held up perfectly in harsh conditions.'
+        milService: 'Air Force',
+        role: 'Communications Officer',
+        categoryRatings: {
+          transportability: 4,
+          easeOfUse: 5,
+          interoperability: 5,
+          detection: 5,
+          reliability: 5
+        },
+        additionalComments: {
+          reliability: 'Rugged build has held up perfectly in harsh desert conditions.',
+          transportability: 'Compact for its capabilities but still requires proper carrying case.'
+        },
+        date: '2024-10-25'
       },
       {
         id: 3,
         author: 'James Brown',
-        rating: 4,
-        date: '2024-10-18',
-        title: 'Very capable system',
-        comment: 'Impressive frequency coverage and the EA capabilities are powerful. Learning curve is moderate but worth it.'
+        milService: 'Marines',
+        role: 'Communications Chief',
+        categoryRatings: {
+          transportability: 4,
+          easeOfUse: 4,
+          interoperability: 5,
+          detection: 4,
+          reliability: 4
+        },
+        additionalComments: {
+          easeOfUse: 'Learning curve is moderate but worth the investment.',
+          detection: 'Frequency coverage is impressive. EA capabilities are powerful.'
+        },
+        date: '2024-10-18'
       }
     ]
   };
@@ -170,6 +266,51 @@ export class ProductService {
 
   getReviewsForProduct(productId: number): Review[] {
     return this.reviews[productId] || [];
+  }
+
+  getAverageCategoryRatings(productId: number): CategoryRatings & { overall: number, count: number } {
+    const reviews = this.getReviewsForProduct(productId);
+    if (reviews.length === 0) {
+      return {
+        transportability: 0,
+        easeOfUse: 0,
+        interoperability: 0,
+        detection: 0,
+        reliability: 0,
+        overall: 0,
+        count: 0
+      };
+    }
+
+    const totals = reviews.reduce((acc, review) => {
+      acc.transportability += review.categoryRatings.transportability;
+      acc.easeOfUse += review.categoryRatings.easeOfUse;
+      acc.interoperability += review.categoryRatings.interoperability;
+      acc.detection += review.categoryRatings.detection;
+      acc.reliability += review.categoryRatings.reliability;
+      return acc;
+    }, {
+      transportability: 0,
+      easeOfUse: 0,
+      interoperability: 0,
+      detection: 0,
+      reliability: 0
+    });
+
+    const count = reviews.length;
+    const averages = {
+      transportability: Math.round((totals.transportability / count) * 10) / 10,
+      easeOfUse: Math.round((totals.easeOfUse / count) * 10) / 10,
+      interoperability: Math.round((totals.interoperability / count) * 10) / 10,
+      detection: Math.round((totals.detection / count) * 10) / 10,
+      reliability: Math.round((totals.reliability / count) * 10) / 10,
+      overall: 0,
+      count: count
+    };
+
+    averages.overall = Math.round(((averages.transportability + averages.easeOfUse + averages.interoperability + averages.detection + averages.reliability) / 5) * 10) / 10;
+
+    return averages;
   }
 
   addReview(productId: number, review: Review): void {

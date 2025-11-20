@@ -1,18 +1,23 @@
-
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet, Router } from '@angular/router';
 import { HeaderComponent } from './header/header';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent],
+  standalone: true,
+  imports: [RouterOutlet, HeaderComponent, CommonModule],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']
 })
 export class App {
-  protected readonly title = signal('tartans4defense');
+  title = 'tartans4defense';
 
-  constructor(private router: Router) {}
+  constructor(public router: Router) {}
+
+  isLoginPage(): boolean {
+    return this.router.url.includes('/login');
+  }
 
   openReviewForm(): void {
     this.router.navigate(['/review-system']);
