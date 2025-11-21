@@ -2,6 +2,30 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.7.
 
+## Setup
+
+### Gemini API Configuration
+
+This application uses Google Gemini AI for review summarization and generation. To set up the API:
+
+1. Obtain a Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Copy the `.env.example` file to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+3. Add your actual API key to the `.env` file:
+   ```
+   GEMINI_API_KEY=your_actual_gemini_api_key_here
+   ```
+4. Generate the environment files:
+   ```bash
+   npm run generate-env
+   ```
+
+**Important:** Never commit the `.env` file to version control. The `.env.example` file serves as a template.
+
+**Note:** The environment files are automatically generated before each build and serve command, so you only need to run `npm run generate-env` manually if you want to update them without starting the development server.
+
 ## Development server
 
 To start a local development server, run:
