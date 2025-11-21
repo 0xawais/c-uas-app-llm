@@ -62,6 +62,111 @@
         "ATAK integration via Reaper plug-in",
         "Compatible with PRC-148/152 and 2590/5590 batteries"
       ]
+    },
+    {
+      "id": 4,
+      "name": "SilentGuardian EW-300",
+      "manufacturer": "TacticalWave Systems",
+      "category": "Electronic Warfare",
+      "price": "$89,500",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=640&q=80",
+      "description": "Advanced vehicular-mounted electronic warfare system designed for wide-spectrum signal detection and neutralization. Features adaptive jamming algorithms and AI-driven threat analysis to counter evolving adversary communications and drone control systems in real-time.",
+      "specifications": [
+        "Frequency coverage: 20 MHz – 18 GHz",
+        "Adaptive jamming with 500W output power",
+        "AI-powered threat classification",
+        "360-degree omnidirectional coverage",
+        "Automated threat prioritization",
+        "Vehicle integration kit included",
+        "Real-time spectrum monitoring",
+        "Range: Up to 5 km effective jamming",
+        "Integrated GPS spoofing capabilities",
+        "MIL-STD-461 compliant"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "PhantomNet Disruptor",
+      "manufacturer": "Aegis Defense Technologies",
+      "category": "Electronic Warfare",
+      "price": "$124,000",
+      "image": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=640&q=80",
+      "description": "Man-portable electronic warfare suite combining SIGINT, direction finding, and targeted jamming capabilities. Designed for special operations and rapid deployment scenarios, providing comprehensive electromagnetic spectrum dominance in a lightweight package.",
+      "specifications": [
+        "Backpack portable design (25 lbs)",
+        "Dual-band simultaneous operation",
+        "Battery life: 6-8 hours continuous",
+        "Direction finding accuracy: ±2 degrees",
+        "Frequency range: 30 MHz – 6 GHz",
+        "Modular antenna system",
+        "Touch-screen control interface",
+        "Encrypted data links",
+        "Quick deployment: <5 minutes",
+        "Integration with Blue Force Tracker"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Wavebreaker Pro",
+      "manufacturer": "Sentinel Electronic Systems",
+      "category": "Electronic Warfare",
+      "price": "$67,900",
+      "description": "Compact counter-drone and communications jamming system optimized for fixed-site protection of critical infrastructure. Employs intelligent frequency hopping detection and selective jamming to minimize collateral interference while maximizing threat neutralization.",
+      "image": "https://images.unsplash.com/photo-1589254065878-42c9da997008?w=640&q=80",
+      "specifications": [
+        "Fixed or semi-mobile deployment",
+        "Coverage radius: 2.5 km",
+        "Multi-target tracking (up to 30 simultaneous)",
+        "Selective frequency jamming",
+        "Low probability of intercept mode",
+        "Weatherproof enclosure (IP67)",
+        "Remote operation via secure web interface",
+        "Frequency bands: 400 MHz – 5.8 GHz",
+        "Power consumption: 350W",
+        "Automated threat logging and reporting"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "SpectrumHawk X7",
+      "manufacturer": "Vanguard Communications Defense",
+      "category": "Electronic Warfare",
+      "price": "$156,000",
+      "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=640&q=80",
+      "description": "Next-generation airborne electronic warfare pod designed for helicopter and UAV integration. Provides persistent area denial against hostile drones, communications, and radar systems with software-defined radio architecture for rapid mission reconfiguration.",
+      "specifications": [
+        "Airborne platform compatible",
+        "Weight: 45 lbs (pod configuration)",
+        "Software-defined radio (SDR) core",
+        "Frequency coverage: 100 MHz – 20 GHz",
+        "Programmable waveform generation",
+        "Real-time mission updates via datalink",
+        "Dual redundant systems",
+        "Operating altitude: up to 15,000 ft",
+        "Effective range: 8 km ground targets",
+        "Integration with tactical mesh networks"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "StormShield Mobile EW Suite",
+      "manufacturer": "Fortress Electronic Warfare",
+      "category": "Electronic Warfare",
+      "price": "$198,500",
+      "image": "https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?w=640&q=80",
+      "description": "Ruggedized all-in-one electronic warfare platform built for convoy protection and mobile operations. Combines signals intelligence, electronic attack, and cyber-electronic warfare capabilities in a vehicle-integrated system with autonomous threat response.",
+      "specifications": [
+        "Full-spectrum EW capabilities",
+        "Vehicle rack-mount system",
+        "Autonomous threat detection and response",
+        "Frequency range: 10 MHz – 40 GHz",
+        "Multi-function phased array antennas",
+        "Cyber-EW integration module",
+        "Power output: 1000W jamming capability",
+        "Cooling system for extended operations",
+        "Network-centric warfare compatible",
+        "Crew size: 2 operators maximum"
+      ]
     }
   ],
   "reviews": {
