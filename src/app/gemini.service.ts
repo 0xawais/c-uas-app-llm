@@ -1,6 +1,7 @@
 // gemini.service.ts
 import { Injectable } from '@angular/core';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +11,13 @@ export class GeminiService {
   private model: any;
 
   constructor() {
-    // Get API key from environment variables
-    const apiKey = (window as any).GEMINI_API_KEY || 'YOUR_GEMINI_API_KEY_HERE';
-    if (apiKey === 'YOUR_GEMINI_API_KEY_HERE') {
-      console.warn('Gemini API key not configured. Please set GEMINI_API_KEY in your environment.');
+    // Get API key from environment configuration
+    const apiKey = environment.geminiApiKey;
+    if (!apiKey || apiKey === 'your_development_gemini_api_key_here' || apiKey === 'your_production_gemini_api_key_here') {
+      console.warn('Gemini API key not configured. Please set your API key in the environment files.');
     }
     this.genAI = new GoogleGenerativeAI(apiKey);
-    this.model = this.genAI.getGenerativeModel({ model: 'gemini-pro' });
+    this.model = this.genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
   }
 
   async generateReviewSummary(productName: string, reviews: any[]): Promise<string> {
